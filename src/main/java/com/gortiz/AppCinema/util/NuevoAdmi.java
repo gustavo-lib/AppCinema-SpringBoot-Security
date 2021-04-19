@@ -39,5 +39,15 @@ public class NuevoAdmi implements CommandLineRunner {
         roles.add(rolUser);
         usuario.setRoles(roles);
         usuarioService.save(usuario);   /**/
+    	
+    	/*Usuario usuario = new Usuario();
+        String passwordEncoded = passwordEncoder.encode("user");
+        usuario.setNombreUsuario("user");
+        usuario.setPassword(passwordEncoded);
+        Rol rolUser = rolService.getByRolNombre(RolNombre.ROLE_USER).get();
+        Set<Rol> roles = new HashSet<>();
+        roles.add(rolUser);
+        usuario.setRoles(roles);
+        usuarioService.save(usuario);*/
     }
 }
