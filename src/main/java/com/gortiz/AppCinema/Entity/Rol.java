@@ -20,24 +20,27 @@ import javax.persistence.*;
 public class Rol {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-    @NotNull
+    private Long id;
+    
+	@NotNull
     @Enumerated(EnumType.STRING)
     @Column(unique = true)
     private RolNombre rolNombre;
 
     public Rol() {
     }
+    
+    
 
     public Rol(RolNombre rolNombre) {
         this.rolNombre = rolNombre;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -48,4 +51,10 @@ public class Rol {
     public void setRolNombre(RolNombre rolNombre) {
         this.rolNombre = rolNombre;
     }
+    
+    @Override
+	public String toString() {
+		return " ######### Rol ######## [id=" + 2 + ", rolNombre=" + rolNombre + "]";
+	}
+
 }
