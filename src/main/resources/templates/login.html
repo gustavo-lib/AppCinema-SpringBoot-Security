@@ -40,23 +40,24 @@
 
 				</div>
 				<div class="card-body">
-					<form th:action="@{/home-user}" method="post">
-					<!-- 	<div th:if="${param.error}">
-							<div class="alert alert-danger">Invalid username or
+					<form th:action="@{/signin}" method="post" >
+					<!-- 	<div th:if="${param.error}"> th:action="@{/home-user}"
+							<div class="alert alert-danger">Invalid username or sec:authorize="!isAuthenticated()"
 								password.</div> 
 						</div>-->
 						<div class="input-group form-group">
 							<div class="input-group-prepend">
 								<span class="input-group-text"><i class="fas fa-user"></i></span>
 							</div>
-							<input type="text" class="form-control" placeholder="username">
+							<input type="text" class="form-control" 
+							id="nombreUsuario" name="nombreUsuario" placeholder="username">
 
 						</div>
 						<div class="input-group form-group">
 							<div class="input-group-prepend">
 								<span class="input-group-text"><i class="fas fa-key"></i></span>
 							</div>
-							<input type="password" class="form-control"
+							<input type="password" class="form-control"  id="password" name="password"
 								placeholder="password">
 						</div>
 						<div class="row align-items-center remember">
@@ -66,6 +67,7 @@
 							<input type="submit" value="Login"
 								class="btn float-right login_btn">
 						</div>
+						<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
 					</form>
 				</div>
 				<div class="card-footer">
