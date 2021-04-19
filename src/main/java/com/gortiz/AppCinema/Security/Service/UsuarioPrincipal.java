@@ -6,13 +6,20 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import com.gortiz.AppCinema.Entity.Usuario;
 
+
 import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 
+
+
 public class UsuarioPrincipal implements UserDetails {
 
-    private int id;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private int id;
     private String nombreUsuario;
     private String password;
     private Collection<? extends GrantedAuthority> authorities;
@@ -25,8 +32,11 @@ public class UsuarioPrincipal implements UserDetails {
     }
 
     public static UsuarioPrincipal build(Usuario usuario){
-        List<GrantedAuthority> authorities =
-                usuario.getRoles().stream().map(rol -> new SimpleGrantedAuthority(rol.getRolNombre().name())).collect(Collectors.toList());
+       List<GrantedAuthority> authorities =
+                usuario.getRoles().stream().map(rol -> 
+                new SimpleGrantedAuthority(rol.getRolNombre().name())).collect(Collectors.toList());
+        authorities.toString();
+        usuario.getRoles().toString();
         return new UsuarioPrincipal(usuario.getId(), usuario.getNombreUsuario(), usuario.getPassword(), authorities);
     }
 
