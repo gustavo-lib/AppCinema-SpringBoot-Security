@@ -9,7 +9,8 @@ import com.gortiz.AppCinema.Enum.RolNombre;
 import java.util.Optional;
 
 @Repository
-public interface RolRepository extends JpaRepository<Rol, Integer> {
+public interface RolRepository extends JpaRepository<Rol, Long> {
+	
     Optional<Rol> findByRolNombre(RolNombre rolNombre);
     boolean existsByRolNombre(RolNombre rolNombre);
 }
