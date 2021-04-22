@@ -41,7 +41,20 @@ public class AdminController {
 	@PreAuthorize("hasRole('ADMIN')")
 	@PostMapping("/guardar")
 	String guardar_pelicula(@ModelAttribute("pelicula") Pelicula pelicula) {
+		String nombre=pelicula.getCalificacion().getNombre();
+		pelicula.getCalificacion().setId(4);
+		if (nombre.equals("Exelente")) {
+			pelicula.getCalificacion().setId(1);
+		}
+		if (nombre.equals("Muy Buena")) {
+			pelicula.getCalificacion().setId(2);
+		}
+		
+		if (nombre.equals("Buena")) {
+			pelicula.getCalificacion().setId(3);
+		}
 		servicePelicula.save(pelicula);
+		
 		return "redirect:/success";
 	}
 
