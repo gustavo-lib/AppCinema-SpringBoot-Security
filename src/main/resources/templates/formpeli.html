@@ -48,12 +48,12 @@
 				</div>
 				<div class="form-group col-md-4">
 					<label for="inputState">Calificacion</label> <select
-						id="inputState" class="form-control">
-						<option selected>...</option>
-						<option>Exelente</option>
-						<option>Muy Buena</option>
-						<option>Buena</option>
-						<option>Regular</option>
+						id="inputState" class="form-control"th:field="*{calificacion}">
+						<option selected value="" >...</option>
+						<option value="Exelente">Exelente</option>
+						<option value="Muy Buena">Muy Buena</option>
+						<option value="Buena">Buena</option>
+						<option value="Regular">Regular</option>
 					</select>
 				</div>
 				<div class="form-group col-md-4">
