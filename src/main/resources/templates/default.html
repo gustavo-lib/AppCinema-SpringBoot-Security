@@ -19,13 +19,18 @@
 					<th scope="col">Nombre</th>
 					<th scope="col">Titulo Original</th>
 					<th scope="col">Calificación</th>
+					<th scope="col"></th>
+					<th scope="col"></th>
 				</tr>
 			</thead>
 			<tbody th:each="pelicula : ${list_pelicula}">
 				<tr>
      					<td th:text=${pelicula.id}></td>
-						<td th:text=${pelicula.nombre}></td>
-						<td th:text=${pelicula.duracion}></td>
+				        <td th:text=${pelicula.nombre}></td>
+					<td th:text=${pelicula.tituloOriginal}></td>
+					<td th:text=${pelicula.calificacion}></td>
+					<td sec:authorize="hasRole('ROLE_ADMIN')"><a th:href="@{'/pelicula/editar/' + ${pelicula.id}}"><button class="btn btn-outline-warning"><i class="far fa-edit"></i></button></a></td>
+                                        <td sec:authorize="hasRole('ROLE_ADMIN')"><a th:href="@{'/pelicula/borrar/' + ${pelicula.id}}"><button class="btn btn-outline-danger"><i class="far fa-trash-alt"></i></button></a></td>
 				</tr>
 			</tbody>
 		</table>
