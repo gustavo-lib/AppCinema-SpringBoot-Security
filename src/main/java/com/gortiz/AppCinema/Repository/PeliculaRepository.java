@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.gortiz.AppCinema.Entity.Pelicula;
 
 @Repository("PeliculaRepository")
-public interface PeliculaRepository extends JpaRepository<Pelicula, Long> {
+public interface PeliculaRepository extends JpaRepository<Pelicula, Integer> {
 
 }
