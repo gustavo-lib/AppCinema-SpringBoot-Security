@@ -27,9 +27,9 @@ public class PeliculaImpl implements IPelicula{
 	}
 
 	@Override
-	public Pelicula getPeliculaById(long id) {
+	public Pelicula getPeliculaById(Integer id) {
 		// TODO Auto-generated method stub
-		return null;
+		return peliculaRepository.getOne(id);
 	}
 
 	@Override
