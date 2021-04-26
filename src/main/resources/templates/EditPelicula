@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head th:insert="fragments :: headerfiles">
+</head>
+<body>
+	<header th:insert="fragments :: nav"></header>
+	<div class="container">
+		<form th:action="@{/guardar}" th:object="${pelicula}" method="POST">
+			<div class="form-row">
+				<div class="form-group col-md-2">
+					<img alt="img" th:src="@{/img/icon.jpg}" class="img-thumbnail"/><!--  -->
+				</div>
+				<div class="form-group col-md-6">
+					<label for="nombre">Nombre</label> 
+					<input type="text" th:field="*{nombre}" class=" form-control" id="nombre">
+				</div>
+
+			</div>
+
+			<div class="form-row">
+				<div class="form-group col-md-10">
+					<label for="titulo">Titulo Original</label> <input type="text"
+						th:field="*{tituloOriginal}" class="form-control" id="titulo">
+				</div>
+				<div class="form-group col-md-1">
+					<label for="duracion">Duracion</label> <input type="text"
+						th:field="*{duracion}"
+						class=" form-control" id="duracion">
+				</div>
+				<div class="form-group col-md-1">
+					<label for="estreno">Estreno</label> <input type="text"
+						th:field="*{anioEstreno}"
+						class=" form-control" id="estreno">
+				</div>
+			</div>
+
+			<div class="form-row">
+				<div class="form-group col-md-4">
+					<label for="inputState">Genero</label> <select id="inputState"
+						class="form-control">
+						<option selected>...</option>
+						<option >Drama</option>
+						<option>Suspenso</option>
+						<option>Terror</option>
+						<option>Accion</option>
+					</select>
+				</div>
+				<div class="form-group col-md-4">
+					<label for="inputState">Calificacion</label> <select
+						id="inputState" class="form-control"th:field="*{calificacion}">
+						<option selected value="" >...</option>
+						<option value="Exelente">Exelente</option>
+						<option value="Muy Buena">Muy Buena</option>
+						<option value="Buena">Buena</option>
+						<option value="Regular">Regular</option>
+					</select>
+				</div>
+				<div class="form-group col-md-4">
+					<label for="inputState">Pais de Origen</label> <select
+						id="inputState" class="form-control">
+						<option selected>...</option>
+						<option>Argentina</option>
+						<option>Australia</option>
+						<option>USA</option>
+					</select>
+				</div>
+			</div>
+
+			<div class="form-row">
+				<div class="form-group col-md-10">
+					<label for="inputEmail4">Registrar elenco</label>
+					<button type="button" class="btn btn-warning">Registrar</button>
+				</div>
+
+			</div>
+			<div class="form-row"></div>
+			<button type="submit" class="btn btn-success float-right ml-2">Guardar</button>
+			
+
+		</form>
+
+	</div>
+	<footer th:insert="fragments :: footer"></footer>
+	<div th:insert="fragments :: scripts"></div>
+</body>
+</html>
