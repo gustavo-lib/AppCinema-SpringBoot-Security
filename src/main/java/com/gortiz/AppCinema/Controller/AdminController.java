@@ -59,6 +59,15 @@ public class AdminController {
 	}
 
 	
+	@PreAuthorize("hasRole('ADMIN')")
+	@GetMapping("/pelicula/editar/{id}")
+	String editarPelicula(@PathVariable Long id, Model model) {
+		Pelicula pelicula;
+		pelicula= servicePelicula.getPeliculaById(id);
+		model.addAttribute("pelicula",pelicula);
+		return "editPelicula";
+	}
+	
 	
 	
 	
