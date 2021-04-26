@@ -10,7 +10,7 @@ public interface IPelicula {
 	
 	List<Pelicula> getAllPelicula();
 	
-	Pelicula getPeliculaById(long id);
+	Pelicula getPeliculaById(Integer id);
 	
 	void deletePeliculaById(long id);
 	
