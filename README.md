@@ -1,7 +1,8 @@
 # AppCinema-SpringBoot-Security
 
 - Spring Boot
-- JPA MySql
+- Spring Security
+- JPA MySQL
 - Thymeleaf
 - CSS
 - JavaScript
