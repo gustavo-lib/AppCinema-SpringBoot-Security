@@ -1,8 +1,16 @@
-# AppCinema-SpringBoot-Security
+#Web App Cinema
+>  Este es un proyecto que contiene un ejemplo con Spring, una aplicacion web monolitica con las operacionnes CRUD create, read,update, delete de Peliculas.
 
+#### Requisitos
+- JDK 8 
+- Maven 3.0
+- Eclipce 
 - Spring Boot
-- Spring Security
-- JPA MySQL
+
+#### Dependencias del proyecto SpringBoot
+- Spring Web
+- Spring Data JPA
 - Thymeleaf
-- CSS
-- JavaScript
+- Spring Boot DevTools
+- MySQL Driver
+- Spring Security
