@@ -1,5 +1,5 @@
 #Web App Cinema
->  Este es un proyecto que contiene un ejemplo con Spring, una aplicacion web monolitica con las operacionnes CRUD create, read,update, delete de Peliculas.
+>  Este es un proyecto que contiene un ejemplo con Spring, una aplicacion web monolitica con las operacionnes CRUD create, read,update, delete de Peliculas. La aplicacion usa Spring Security con CSRF (Cross-Site equest Forgery) . Tiene dos tipos de usuarios ADMIN, USER. Cada usuario tiene distinto tipo de autorización.
 
 #### Requisitos
 - JDK 8 
