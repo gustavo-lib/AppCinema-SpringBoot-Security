@@ -15,3 +15,6 @@
 - Spring Boot DevTools
 - MySQL Driver
 - Spring Security
+
+
+https://github.com/gustavo-lib/AppCinema-SpringBoot-Security/issues/1#issue-870551792
